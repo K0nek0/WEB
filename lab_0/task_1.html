@@ -1,0 +1,41 @@
+<!--
+    Ошибки:
+    1. Отсутствуют тэги head, body и html и !DOCTYPE
+    2. Нарушена табуляция тэга header
+    3. Тег img не содержит атрибут alt, поэтому, если картинка не загрузится, то пользователю будет
+    непонятно что произошло
+    4. Тэг nav переместил перед header, чтобы навигацией было удобно пользоваться и она не сдвигалась
+    при появлении нового контента на странице
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Zero | Task 1</title>
+</head>
+<body>
+        <nav>
+            <a href="#">Главная страница</a><br>
+            <a href="#">Раздел 1</a><br>
+            <a href="#">Раздел 2</a><br>
+        </nav>
+
+        <header>Узнай на все 100 %!</header>
+        <section>
+            <h1>Языки программирования</h1>
+            <figure>
+                <img src="https://www.python.org/static/img/python-logo.png" alt="Python Logo">
+                <figcaption>Логотип Python</figcaption>
+            </figure>
+            <article>
+                <p>Изучать Python очень весело</p>
+                <p>Но нужно читать и практиковаться</p>
+                <p>И сильно-сильно стараться</p>
+            </article>
+        </section>
+
+        <footer>Успехов в освоении</footer>
+</body>
+</html>
