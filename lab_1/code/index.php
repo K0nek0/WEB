@@ -279,5 +279,56 @@ $arr = array('a', 'b', 'c', 'd', 'e');
 echo "\n", sizeof($arr);
 
 $len = count($arr);
-echo "\n" . $arr[$len - 1] . " " . $arr[$len - 2];
+echo "\n" . $arr[$len - 1] . " " . $arr[$len - 2] . "\n";
+//------
+
+echo "\nTask №9 (if else)";
+
+function sumGreaterTen(int $a, int $b): int
+{
+    if (($a + $b) > 10) {
+        return True;
+    } else {
+        return False;
+    }
+}
+
+echo "\n" . sumGreaterTen(4, 5);
+
+function equality(int $a, int $b): int
+{
+    if ($a == $b) {
+        return True;
+    } else {
+        return False;
+    }
+}
+
+echo "\n" . equality(55, 55);
+
+$test = 0;
+echo "\n", ($test == 0) ? 'верно' : '';
+
+echo "\n";
+$age = rand(0, 110);
+
+if ($age < 10 || $age > 99) {
+    echo "$age вне [10, 99].\n";
+} else {
+    $sum = array_sum(str_split($age));
+
+    if ($sum <= 9) {
+        echo "Сумма цифр однозначна: $sum\n";
+    } else {
+        echo "Сумма цифр двузначна: $sum\n";
+    }
+}
+
+$arr = array(12, 9, 71);
+if (sizeof($arr) == 3) {
+    $sum = array_sum($arr);
+    echo "В массиве 3 элемента, их сумма = " . $sum;
+} else {
+    echo "В массиве " . sizeof($arr) . " элемента";
+}
 //------
