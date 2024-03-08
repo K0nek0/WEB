@@ -282,7 +282,7 @@ $len = count($arr);
 echo "\n" . $arr[$len - 1] . " " . $arr[$len - 2] . "\n";
 //------
 
-echo "\nTask №9 (if else)";
+echo "\nTask №10 (if else)";
 
 function sumGreaterTen(int $a, int $b): int
 {
@@ -332,3 +332,16 @@ if (sizeof($arr) == 3) {
     echo "В массиве " . sizeof($arr) . " элемента";
 }
 //------
+
+echo "\nTask №11 (loops)";
+
+$l = 20;
+echo "\n";
+for ($i = 1; $i <= $l; $i++) {
+    for ($j = 1; $j <= $i; $j++) {
+        echo 'x';
+    }
+    echo "\n";
+}
+//------
+
