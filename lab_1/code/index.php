@@ -159,7 +159,61 @@ function printStringReturnNumber(): int
     echo "Число: ";
     return 21;
 }
+
 $my_num = printStringReturnNumber();
-echo $my_num;
+echo $my_num . "\n";
 //------
 
+echo "\nTask №8 (another functions)";
+
+function increaseEnthusiasm(string $string): string
+{
+    return $string . "!";
+}
+
+echo "\n", increaseEnthusiasm("I'm tired");
+
+function repeatThreeTimes(string $string): string
+{
+    return $string . $string . $string;
+}
+
+echo "\n", repeatThreeTimes(":( ");
+echo "\n", increaseEnthusiasm(repeatThreeTimes("A"));
+
+function cut(string $string, int $l = 10): string
+{
+    return substr($string, 0, $l);
+}
+
+$cut = cut("I want to relax...");
+echo "\n", $cut;
+//--
+function printArray($array, $i = 0): void
+{
+    if ($i < sizeof($array)) {
+        echo $array[$i] . "\n";
+        printArray($array, $i + 1);
+    }
+}
+
+echo "\n";
+$array = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+printArray($array);
+//--
+function sumDigits($number): int
+{
+    $sum = 0;
+    while ($number > 0) {
+        $sum += $number % 10;
+        $number = (int)($number / 10);
+    }
+    if ($sum > 9) {
+        return sumDigits($sum);
+    }
+    return $sum;
+}
+
+$number = 123456789;
+echo "Однозначное число: ", sumDigits($number);
+//------
