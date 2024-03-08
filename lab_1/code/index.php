@@ -215,5 +215,69 @@ function sumDigits($number): int
 }
 
 $number = 123456789;
-echo "Однозначное число: ", sumDigits($number);
+echo "Однозначное число: ", sumDigits($number) . "\n";
+//------
+
+echo "\nTask №9 (arrays)\n";
+function createXarray(int $l)
+{
+    for ($i = 1; $i <= $l; $i++) {
+        $array[$i] = str_repeat("x", $i);
+    }
+    return $array;
+}
+
+print_r(createXarray(4));
+
+function arrayFill($element, int $l)
+{
+    for ($i = 0; $i <= $l; $i++) {
+        $array[$i] = $element;
+    }
+    return $array;
+}
+
+print_r(arrayFill("y", 6));
+
+function sumTwoDimensionalArray($array)
+{
+    $sum = 0;
+    foreach ($array as $innerArray) {
+        foreach ($innerArray as $value) {
+            $sum += $value;
+        }
+    }
+    return $sum;
+}
+
+$array = [[1, 2, 3], [4, 5], [6]];
+echo "Сумма элементов: ", sumTwoDimensionalArray($array);
+
+$number = 1;
+for ($i = 0; $i < 3; $i++) {
+    $innerArray = array();
+
+    for ($j = 0; $j < 3; $j++) {
+        $innerArray[] = $number;
+        $number++;
+    }
+
+    $twoDimensionalArray[] = $innerArray;
+}
+
+$numbers = array(2, 5, 3, 9);
+$result = $numbers[0] * $numbers[1] + $numbers[2] * $numbers[3];
+echo "\n", $result;
+
+$user = array('name' => "Nikolay", 'surname' => "Timoshchenko", 'patronymic' => "Stepanovich");
+echo "\nФИО: ", $user['name'], " ", $user['surname'], " ", $user['patronymic'];
+
+$date = array('year' => 2024, 'month' => "03", 'day' => 8);
+echo "\nДата: ", $date['year'], "-", $date['month'], "-", $date['day'];
+
+$arr = array('a', 'b', 'c', 'd', 'e');
+echo "\n", sizeof($arr);
+
+$len = count($arr);
+echo "\n" . $arr[$len - 1] . " " . $arr[$len - 2];
 //------
