@@ -152,3 +152,14 @@ foreach ($array_1_10 as $element) {
 echo "\nКол-во элементов, сумма которых > 10: " . $counter . "\n";
 //------
 
+echo "\nTask №7 (functions)\n";
+
+function printStringReturnNumber(): int
+{
+    echo "Число: ";
+    return 21;
+}
+$my_num = printStringReturnNumber();
+echo $my_num;
+//------
+
