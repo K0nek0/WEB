@@ -327,9 +327,9 @@ if ($age < 10 || $age > 99) {
 $arr = array(12, 9, 71);
 if (sizeof($arr) == 3) {
     $sum = array_sum($arr);
-    echo "В массиве 3 элемента, их сумма = " . $sum;
+    echo "В массиве 3 элемента, их сумма = " . $sum . "\n";
 } else {
-    echo "В массиве " . sizeof($arr) . " элемента";
+    echo "В массиве " . sizeof($arr) . " элемента\n";
 }
 //------
 
@@ -345,3 +345,29 @@ for ($i = 1; $i <= $l; $i++) {
 }
 //------
 
+echo "\nTask №12 (combination of functions)\n";
+
+$numbers = array(3, 4, 6, 11, 9, 74, 1);
+$avg = array_sum($numbers) / sizeof($numbers);
+echo $avg;
+
+$first = 1;
+$last = 100;
+$sum = ($last * ($last + 1)) / 2;
+echo "\nСумма чисел от $first до $last: $sum\n";
+
+$sqrtnumbers = array_map("sqrt", $numbers);
+print_r($sqrtnumbers);
+
+$numbers = range(1, 26);
+$letters = range('a', 'z');
+$result = array_combine($letters, $numbers);
+print_r($result);
+
+$string = '1234567890';
+$pairs = str_split($string, 2);
+$arr = array_map("intval", $pairs);
+$sum = array_sum($arr);
+echo "Сумма пар чисел: $sum";
+
+//I'm totally tired :<
