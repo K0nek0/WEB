@@ -44,3 +44,16 @@ echo "\nTask №4 (degree)\n";
 echo "8^2 = ", 8 ** 2;
 
 //------
+echo "\nTask №5 (assignment operators)\n";
+
+$my_num = $num_1;
+$answer = $my_num;
+$answer += 2;
+$answer *= 2;
+$answer -= 2;
+$answer /= 2;
+$answer -= $my_num;
+
+echo $answer;
+
+//------
