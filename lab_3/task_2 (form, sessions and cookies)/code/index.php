@@ -43,4 +43,22 @@
             <input type="submit"/>
         </form>
     </div>
-    
+    <h3>Sessions. Part 2</h3>
+    <div class>
+        <label>Tell us about yourself</label>
+        <form method="post" action="step_c.php">
+            <label for="name">Name</label>
+            <input id="name" name="name"/><br>
+            <label for="age">Age</label>
+            <input id="age" type="number" name="age"/><br>
+            <label for="card_numb">Сard number</label>
+            <input id="card_numb" name="card_numb"/><br>
+            <label for="back_numb">Back numbers</label>
+            <input id="back_numb" type="number" name="back_numb"/><br>
+
+            <input type="submit"/>
+        </form>
+    </div>
+</div>
+</body>
+</html>
