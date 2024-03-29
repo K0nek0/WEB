@@ -27,3 +27,20 @@
     }
     ?>
 </div>
+<div>
+    <h2>Sessions</h2>
+    <h3>Sessions. Part 1</h3>
+    <div class>
+        <label>Tell us about yourself</label>
+        <form method="post" action="step_b.php">
+            <label for="surname">Surname</label>
+            <input id="surname" name="surname"/><br>
+            <label for="name">Name</label>
+            <input id="name" name="name"/><br>
+            <label for="age">Age</label>
+            <input id="age" type="number" name="age"/><br>
+
+            <input type="submit"/>
+        </form>
+    </div>
+    
