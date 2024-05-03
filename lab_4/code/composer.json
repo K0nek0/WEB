@@ -1,0 +1,11 @@
+{
+    "name": "k0nek0/code",
+    "autoload": {
+        "psr-4": {
+            "K0nek0\\Code\\": "src/"
+        }
+    },
+    "require": {
+        "google/apiclient": "^2.16"
+    }
+}
