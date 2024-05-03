@@ -18,12 +18,8 @@
             <label for="categories">Category</label>
             <label>
                 <select name="categories" required>
-                    <?php
-                    $files = scandir("./categories");
-                    foreach ($files as $file)
-                        if ('.' != $file && '..' != $file)
-                            echo "<option value='$file'>$file</option>";
-                    ?>
+                    <option value="cars">cars</option>
+                    <option value="other">other</option>
                 </select>
             </label>
 
