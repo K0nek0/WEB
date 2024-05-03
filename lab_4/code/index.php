@@ -46,19 +46,17 @@
             </thead>
             <tbody>
             <?php
-            foreach ($files as $category){
-                foreach ($files as $category){
-                    if ($category == '.' || $category == '..') continue;
-                    $titles = scandir("./categories/$category");
-                    foreach ($titles as $title){
-                        if ($title == '.' || $title == '..') continue;
-                        $newTitle = substr($title, 0, strlen($title) - 4);
-                        $desc = file_get_contents("./categories/$category/$title");
-                        echo "<tr>";
-                        echo "<td>$category</td>";
-                        echo "<td>$newTitle</td>";
-                        echo "<td>$desc</td>";
-                        echo "</tr>";
+                require 'vendor/autoload.php';
+                error_reporting(E_ALL & ~E_DEPRECATED & ~E_NOTICE);
+
+                $client = new \Google_Client();
+                $client->setApplicationName('php-lab-4');
+                $client->setScopes(['https://www.googleapis.com/auth/spreadsheets']);
+                $client->setAccessType('offline');
+                $path = 'credentials.json';
+                $client->setAuthConfig($path);
+
+                $service = new \Google_Service_Sheets($client);
                     }
                 }
                 break;
