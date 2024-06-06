@@ -18,12 +18,8 @@
             <label for="categories">Category</label>
             <label>
                 <select name="categories" required>
-                    <?php
-                    $files = scandir("./categories");
-                    foreach ($files as $file)
-                        if ('.' != $file && '..' != $file)
-                            echo "<option value='$file'>$file</option>";
-                    ?>
+                    <option value="Cars">Cars</option>
+                    <option value="Other">Other</option>
                 </select>
             </label>
 
@@ -50,23 +46,21 @@
             </thead>
             <tbody>
             <?php
-            foreach ($files as $category){
-                foreach ($files as $category){
-                    if ($category == '.' || $category == '..') continue;
-                    $titles = scandir("./categories/$category");
-                    foreach ($titles as $title){
-                        if ($title == '.' || $title == '..') continue;
-                        $newTitle = substr($title, 0, strlen($title) - 4);
-                        $desc = file_get_contents("./categories/$category/$title");
-                        echo "<tr>";
-                        echo "<td>$category</td>";
-                        echo "<td>$newTitle</td>";
-                        echo "<td>$desc</td>";
-                        echo "</tr>";
-                    }
+                $mysqli = new mysqli('db', 'root', 'koneko', 'web');
+                if (mysqli_connect_error()){
+                    printf("Подключение к серверу MySQL невозможно, Код ошибки: %s\n", mysqli_connect_error());
+                    exit();
                 }
-                break;
-            }
+                $ads = $mysqli->query('SELECT * FROM ad ORDER BY created DESC');
+                while($row = $ads->fetch_assoc()) {
+                    echo "<tr>";
+                    foreach(['category', 'title', 'description'] as $field) {
+                        echo '<td>', $row[$field], "</td>";
+                    }
+                    echo "</tr>";
+                }
+                $ads->close();
+                $mysqli->close();
             ?>
             </tbody>
         </table>
