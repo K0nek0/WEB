@@ -14,10 +14,13 @@ $category = $_POST["categories"];
 $title = $_POST["title"];
 $text = $_POST["text"];
 
-$filePath = "categories/$category/$title.txt";
+$mysqli = new mysqli('db', 'root', 'helloworld', 'web');
 
-if (false === file_put_contents($filePath, $text)) {
-    throw new Exception("Something went wrong");
+if (mysqli_connect_error()){
+    printf("Подключение к серверу MySQL невозможно, Код ошибки: %s\n", mysqli_connect_error());
+    redirectToHome();
 }
-chmod($filePath, 0777);
+
+$mysqli->query("INSERT INTO ad (email, category, title, text) VALUES ('$email', '$category', '$title', '$text')");
+$mysqli->close();
 redirectToHome();
